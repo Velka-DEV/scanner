@@ -19,7 +19,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let current_dir = "."; // Current directory
+    let current_dir = ".";
 
     let extensions: Vec<&str> = args.extensions.iter().map(|s| s.as_str()).collect();
     let exclude_patterns: Vec<&str> = args.exclude.iter().map(|s| s.as_str()).collect();
