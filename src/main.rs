@@ -9,11 +9,11 @@ use clap::Parser;
 #[command(version, about, long_about = None)]
 struct Args {
     /// File extensions to include (comma-separated)
-    #[arg(long, value_delimiter = ',')]
+    #[arg(long, value_delimiter = ',', short = 'e')]
     extensions: Vec<String>,
 
     /// Exclude files/folders matching the pattern (comma-separated)
-    #[arg(long, value_delimiter = ',')]
+    #[arg(long, value_delimiter = ',', short = 'x')]
     exclude: Vec<String>,
 }
 
