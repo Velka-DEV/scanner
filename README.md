@@ -12,7 +12,11 @@ Scanner is a command-line tool written in Rust that scans a directory and its su
 
 ## Installation
 
-To use Scanner, you need to have Rust installed on your system. If you don't have Rust installed, you can download and install it from the official Rust website: [https://www.rust-lang.org/](https://www.rust-lang.org/)
+You can download the latest release of Scanner from the [Releases](https://github.com/Velka-DEV/scanner/releases) page on GitHub. The releases are available for Windows, macOS, and Linux.
+
+## Build
+
+To build Scanner, you need to have Rust installed on your system. If you don't have Rust installed, you can download and install it from the official Rust website: [https://www.rust-lang.org/](https://www.rust-lang.org/)
 
 Once Rust is installed, you can clone this repository and build the project using Cargo, the Rust package manager:
 
