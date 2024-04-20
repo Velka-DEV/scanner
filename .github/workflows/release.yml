@@ -31,6 +31,8 @@ jobs:
             os: macos-latest
           - target: x86_64-apple-darwin
             os: macos-latest
+          - target: universal-apple-darwin
+            os: macos-latest
           - target: x86_64-pc-windows-msvc
             os: windows-latest
           - target: aarch64-pc-windows-msvc
@@ -41,7 +43,5 @@ jobs:
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
           bin: scanner
-          zip: none
-          tar: none
           target: ${{ matrix.target }}
           token: ${{ secrets.GITHUB_TOKEN }}
