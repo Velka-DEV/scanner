@@ -29,7 +29,7 @@ fn main() {
     let exclude_patterns: Vec<&str> = args.exclude.iter().map(|s| s.as_str()).collect();
 
     let mut extension_map = HashMap::new();
-    extension_map.insert("go", "golang");
+    extension_map.insert("go", "go");
     extension_map.insert("rs", "rust");
     extension_map.insert("cs", "csharp");
     extension_map.insert("py", "python");
