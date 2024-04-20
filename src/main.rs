@@ -48,7 +48,9 @@ fn main() {
     extension_map.insert("php", "php");
 
     println!("Project tree:");
+    println!("```");
     print_directory_tree(current_dir, 0, &exclude_patterns);
+    print!("```");
 
     println!("\nFiles:");
     print_file_contents(current_dir, &extensions, &extension_map, &exclude_patterns);
@@ -56,8 +58,6 @@ fn main() {
 
 fn print_directory_tree(dir: &str, level: usize, exclude_patterns: &[&str]) {
     let entries = fs::read_dir(dir).unwrap();
-
-    println!("```");
 
     for (i, entry) in entries.enumerate() {
         let entry = entry.unwrap();
@@ -81,7 +81,6 @@ fn print_directory_tree(dir: &str, level: usize, exclude_patterns: &[&str]) {
         }
     }
 
-    print!("```");
 }
 
 fn print_file_contents(
