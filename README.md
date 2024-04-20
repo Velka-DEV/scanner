@@ -1,4 +1,8 @@
 # Scanner
+[![Release](https://github.com/Velka-DEV/scanner/workflows/Release/badge.svg)](https://github.com/Velka-DEV/scanner/actions?query=workflow:"Release")
+[![GitHub release](https://img.shields.io/github/release/Velka-DEV/scanner?include_prereleases=&sort=semver&color=blue)](https://github.com/Velka-DEV/scanner/releases/)
+[![License](https://img.shields.io/badge/License-GPLv3-blue)](#license)
+[![issues - scanner](https://img.shields.io/github/issues/Velka-DEV/scanner)](https://github.com/Velka-DEV/scanner/issues)
 
 Scanner is a command-line tool written in Rust that scans a directory and its subdirectories to generate a project tree and display the contents of files with specified extensions. It provides a convenient way to visualize the structure of your project and view the code snippets of selected files.
 
