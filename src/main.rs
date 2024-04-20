@@ -8,6 +8,10 @@ use clap::Parser;
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Args {
+    /// Path to the directory
+    #[arg(default_value = ".", short = 'p')]
+    path: String,
+
     /// File extensions to include (comma-separated)
     #[arg(long, value_delimiter = ',', short = 'e')]
     extensions: Vec<String>,
@@ -19,7 +23,7 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    let current_dir = ".";
+    let path = &args.path;
 
     let extensions: Vec<&str> = args.extensions.iter().map(|s| s.as_str()).collect();
     let exclude_patterns: Vec<&str> = args.exclude.iter().map(|s| s.as_str()).collect();
@@ -48,14 +52,15 @@ fn main() {
     extension_map.insert("php", "php");
 
     println!("Project tree:");
+    println!();
     println!("```");
-    print_directory_tree(current_dir, 0, &exclude_patterns);
+    print_directory_tree(&path, 0, &exclude_patterns);
     print!("```");
 
     println!();
 
     println!("\nFiles:");
-    print_file_contents(current_dir, &extensions, &extension_map, &exclude_patterns);
+    print_file_contents(&path, &extensions, &extension_map, &exclude_patterns);
 }
 
 fn print_directory_tree(dir: &str, level: usize, exclude_patterns: &[&str]) {
