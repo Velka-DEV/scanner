@@ -9,7 +9,7 @@ use clap::Parser;
 #[command(version, about, long_about = None)]
 struct Args {
     /// Path to the directory
-    #[arg(default_value = ".", short = 'p')]
+    #[arg(long, default_value = ".", short = 'p')]
     path: String,
 
     /// File extensions to include (comma-separated)

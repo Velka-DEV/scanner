@@ -38,8 +38,11 @@ To run Scanner, navigate to the directory you want to scan and execute the `scan
 
 ### Options
 
+- `-p, --path <PATH>`: Specify the path of the directory to scan. If not provided, the current directory will be scanned.
 - `-e, --extensions <EXTENSIONS>`: Specify the file extensions to include in the output (comma-separated). If not provided, all files will be included.
 - `-x, --exclude <PATTERNS>`: Specify the file/folder patterns to exclude from the output (comma-separated). If not provided, no files/folders will be excluded.
+- `-h, --help`: Display the help message.
+- `-V, --version`: Display the version of Scanner.
 
 ### Examples
 
