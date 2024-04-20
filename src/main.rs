@@ -52,6 +52,8 @@ fn main() {
     print_directory_tree(current_dir, 0, &exclude_patterns);
     print!("```");
 
+    println!();
+
     println!("\nFiles:");
     print_file_contents(current_dir, &extensions, &extension_map, &exclude_patterns);
 }
@@ -104,15 +106,19 @@ fn print_file_contents(
                     let file_name = path.file_name().unwrap().to_str().unwrap();
                     let mut file = File::open(&path).unwrap();
                     let mut contents = String::new();
-                    file.read_to_string(&mut contents).unwrap();
 
-                    let code_block_name = extension_map.get(ext.to_str().unwrap()).unwrap_or(&"");
-
-                    println!("{}:", file_name);
-                    println!("```{}", code_block_name);
-                    println!("{}", contents);
-                    println!("```");
-                    println!();
+                    if let Ok(_) = file.read_to_string(&mut contents) {
+                        let code_block_name = extension_map.get(ext.to_str().unwrap()).unwrap_or(&"");
+                    
+                        println!();
+                        println!("{}:", file_name);
+                        println!("```{}", code_block_name);
+                        println!("{}", contents);
+                        println!("```");
+                        println!();
+                    } else {
+                        eprintln!("Failed to read file: {}", file_name);
+                    }
                 }
             }
         } else if path.is_dir() {
