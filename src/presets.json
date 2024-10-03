@@ -1,142 +1,142 @@
 {
   "rust": {
-    "extensions": ["rs", "toml", "md"],
+    "extensions": ["rs", "toml"],
     "exclude": [".git", "target", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "python": {
-    "extensions": ["py", "pyw", "ipynb", "txt", "md", "yaml", "yml", "json"],
+    "extensions": ["py", "pyw", "ipynb", "txt", "yaml", "yml", "json"],
     "exclude": [".git", "__pycache__", "venv", "env", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "javascript": {
-    "extensions": ["js", "jsx", "json", "md", "html", "css"],
+    "extensions": ["js", "jsx", "json", "html", "css"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp", "bower_components"]
   },
   "typescript": {
-    "extensions": ["ts", "tsx", "json", "md", "html", "css"],
+    "extensions": ["ts", "tsx", "json", "html", "css"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp", "bower_components"]
   },
   "go": {
-    "extensions": ["go", "mod", "sum", "md"],
+    "extensions": ["go", "mod", "sum"],
     "exclude": [".git", "vendor", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "java": {
-    "extensions": ["java", "xml", "properties", "gradle", "md"],
+    "extensions": ["java", "xml", "properties", "gradle"],
     "exclude": [".git", "target", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "csharp": {
-    "extensions": ["cs", "csproj", "sln", "config", "md"],
-    "exclude": [".git", "bin", "obj", "node_modules", "dist", "build", "tmp", "temp"]
+    "extensions": ["cs", "csproj", "sln", "config"],
+    "exclude": [".git", "bin", "obj", "node_modules", "dist", "build", "tmp", "temp", "applicationhost.config"]
   },
   "cpp": {
-    "extensions": ["cpp", "hpp", "h", "c", "md"],
+    "extensions": ["cpp", "hpp", "h", "c"],
     "exclude": [".git", "build", "node_modules", "dist", "tmp", "temp"]
   },
   "php": {
-    "extensions": ["php", "html", "css", "js", "md"],
+    "extensions": ["php", "html", "css", "js"],
     "exclude": [".git", "vendor", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "ruby": {
-    "extensions": ["rb", "erb", "rake", "md"],
+    "extensions": ["rb", "erb", "rake"],
     "exclude": [".git", "vendor", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "kotlin": {
-    "extensions": ["kt", "kts", "java", "xml", "md"],
+    "extensions": ["kt", "kts", "java", "xml"],
     "exclude": [".git", "build", "node_modules", "dist", "tmp", "temp"]
   },
   "swift": {
-    "extensions": ["swift", "h", "m", "mm", "md"],
+    "extensions": ["swift", "h", "m", "mm"],
     "exclude": [".git", "build", "node_modules", "dist", "tmp", "temp"]
   },
   "haskell": {
-    "extensions": ["hs", "lhs", "md"],
+    "extensions": ["hs", "lhs"],
     "exclude": [".git", "dist", "build", "node_modules", "tmp", "temp"]
   },
   "scala": {
-    "extensions": ["scala", "sc", "java", "md"],
+    "extensions": ["scala", "sc", "java"],
     "exclude": [".git", "target", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "elixir": {
-    "extensions": ["ex", "exs", "md"],
+    "extensions": ["ex", "exs"],
     "exclude": [".git", "_build", "deps", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "erlang": {
-    "extensions": ["erl", "hrl", "md"],
+    "extensions": ["erl", "hrl"],
     "exclude": [".git", "ebin", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "lua": {
-    "extensions": ["lua", "md"],
+    "extensions": ["lua"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "react": {
-    "extensions": ["js", "jsx", "ts", "tsx", "json", "md", "html", "css"],
+    "extensions": ["js", "jsx", "ts", "tsx", "json", "html", "css"],
     "exclude": [".git", "node_modules", "build", "dist", "tmp", "temp"]
   },
   "vue": {
-    "extensions": ["vue", "js", "ts", "json", "md", "html", "css"],
+    "extensions": ["vue", "js", "ts", "json", "html", "css"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "angular": {
-    "extensions": ["ts", "html", "css", "json", "md"],
+    "extensions": ["ts", "html", "css", "json"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "django": {
-    "extensions": ["py", "html", "css", "js", "json", "md"],
+    "extensions": ["py", "html", "css", "js", "json"],
     "exclude": [".git", "__pycache__", "venv", "env", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "flask": {
-    "extensions": ["py", "html", "css", "js", "json", "md"],
+    "extensions": ["py", "html", "css", "js", "json"],
     "exclude": [".git", "__pycache__", "venv", "env", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "rails": {
-    "extensions": ["rb", "erb", "html", "css", "js", "md"],
+    "extensions": ["rb", "erb", "html", "css", "js"],
     "exclude": [".git", "vendor", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "laravel": {
-    "extensions": ["php", "blade.php", "html", "css", "js", "md"],
+    "extensions": ["php", "blade.php", "html", "css", "js"],
     "exclude": [".git", "vendor", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "spring": {
-    "extensions": ["java", "xml", "properties", "md"],
+    "extensions": ["java", "xml", "properties"],
     "exclude": [".git", "target", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "express": {
-    "extensions": ["js", "ts", "json", "md", "html", "css"],
+    "extensions": ["js", "ts", "json", "html", "css"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "nextjs": {
-    "extensions": ["js", "jsx", "ts", "tsx", "json", "md", "html", "css"],
+    "extensions": ["js", "jsx", "ts", "tsx", "json", "html", "css"],
     "exclude": [".git", ".next", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "nuxt": {
-    "extensions": ["js", "ts", "vue", "json", "md", "html", "css"],
+    "extensions": ["js", "ts", "vue", "json", "html", "css"],
     "exclude": [".git", ".nuxt", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "svelte": {
-    "extensions": ["svelte", "js", "ts", "json", "md", "html", "css"],
+    "extensions": ["svelte", "js", "ts", "json", "html", "css"],
     "exclude": [".git", "public/build", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "meteor": {
-    "extensions": ["js", "jsx", "ts", "tsx", "json", "md", "html", "css"],
+    "extensions": ["js", "jsx", "ts", "tsx", "json", "html", "css"],
     "exclude": [".git", ".meteor/local", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "aspnet": {
-    "extensions": ["cs", "cshtml", "config", "json", "md", "html", "css"],
+    "extensions": ["cs", "cshtml", "config", "json", "html", "css"],
     "exclude": [".git", "bin", "obj", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "html": {
-    "extensions": ["html", "htm", "css", "js", "json", "md"],
+    "extensions": ["html", "htm", "css", "js", "json"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "css": {
-    "extensions": ["css", "scss", "sass", "less", "md"],
+    "extensions": ["css", "scss", "sass", "less"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "docker": {
-    "extensions": ["dockerfile", "Dockerfile", "yaml", "yml", "md"],
+    "extensions": ["dockerfile", "Dockerfile", "yaml", "yml"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   },
   "kubernetes": {
-    "extensions": ["yaml", "yml", "json", "md"],
+    "extensions": ["yaml", "yml", "json"],
     "exclude": [".git", "node_modules", "dist", "build", "tmp", "temp"]
   }
 }
