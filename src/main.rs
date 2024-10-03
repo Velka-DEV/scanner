@@ -2,22 +2,29 @@ use std::collections::HashMap;
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::Path;
-
 use clap::Parser;
+use serde::Deserialize;
+use serde_json::from_str;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Args {
-    /// Path to the directory
     #[arg(long, default_value = ".", short = 'p')]
     path: String,
 
-    /// File extensions to include (comma-separated)
     #[arg(long, value_delimiter = ',', short = 'e')]
     extensions: Vec<String>,
 
-    /// Exclude files/folders matching the pattern (comma-separated)
     #[arg(long, value_delimiter = ',', short = 'x')]
+    exclude: Vec<String>,
+
+    #[arg(long, short = 'r')]
+    preset: Option<String>,
+}
+
+#[derive(Deserialize)]
+struct Preset {
+    extensions: Vec<String>,
     exclude: Vec<String>,
 }
 
@@ -25,8 +32,26 @@ fn main() {
     let args = Args::parse();
     let path = &args.path;
 
-    let extensions: Vec<&str> = args.extensions.iter().map(|s| s.as_str()).collect();
-    let exclude_patterns: Vec<&str> = args.exclude.iter().map(|s| s.as_str()).collect();
+    let presets: HashMap<String, Preset> = load_presets();
+
+    let mut extensions = args.extensions.clone();
+    let mut exclude_patterns = args.exclude.clone();
+
+    if let Some(preset_name) = &args.preset {
+        if let Some(preset) = presets.get(preset_name) {
+            if extensions.is_empty() {
+                extensions = preset.extensions.clone();
+            }
+            if exclude_patterns.is_empty() {
+                exclude_patterns = preset.exclude.clone();
+            }
+        } else {
+            eprintln!("Preset '{}' not found", preset_name);
+        }
+    }
+
+    let extensions: Vec<&str> = extensions.iter().map(|s| s.as_str()).collect();
+    let exclude_patterns: Vec<&str> = exclude_patterns.iter().map(|s| s.as_str()).collect();
 
     let mut extension_map = HashMap::new();
     extension_map.insert("go", "go");
@@ -63,6 +88,11 @@ fn main() {
     print_file_contents(&path, &extensions, &extension_map, &exclude_patterns);
 }
 
+fn load_presets() -> HashMap<String, Preset> {
+    let preset_data = include_str!("presets.json");
+    from_str(preset_data).expect("Failed to parse presets.json")
+}
+
 fn print_directory_tree(dir: &str, level: usize, exclude_patterns: &[&str]) {
     let entries = fs::read_dir(dir).unwrap();
 
@@ -87,7 +117,6 @@ fn print_directory_tree(dir: &str, level: usize, exclude_patterns: &[&str]) {
             println!("{}", path.file_name().unwrap().to_str().unwrap());
         }
     }
-
 }
 
 fn print_file_contents(
